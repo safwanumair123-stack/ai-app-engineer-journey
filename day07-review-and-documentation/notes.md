@@ -1,24 +1,24 @@
-# Day 6 — Clear Form and Results
+# Day 7 — Review and Documentation
 
 ## Completed
-- Added a "Clear form and result" button.
-- Used type="button" so it does not submit the form.
-- Connected the button to a JavaScript click event listener.
-- Added code to clear both inputs, the status message,
-  the readable result, and the raw JSON.
-- Returned the cursor to the title input after clearing.
-- Added a guard to prevent clearing while a request is sending.
+- Created a README explaining the project, files, setup,
+  features, and limitations.
+- Corrected duplicated content in the README.
+- Performed a manual functional review of the Day 7 copy.
+- Recorded the actual test outcomes in the README.
 
-## Tests completed
-- Submitted a practice post successfully.
-- Clicked Clear and confirmed the inputs and results disappeared.
-- Checked the Network panel: existing requests remained,
-  but clicking Clear did not add another request.
+## Checks passed
+- Successful submission and response display.
+- Clearing inputs and displayed results.
+- Empty-field validation.
+- Spaces-only validation.
+- Network-failure feedback.
+- Successful retry after reconnecting without refreshing.
 
 ## Key learning
-Clearing the webpage is different from clearing the browser's
-network history. Existing request entries remain visible even
-after the form and results have been cleared.
+A project needs both working code and clear documentation.
 
-Today I made targeted changes to existing HTML and JavaScript
-rather than replacing the entire application.
+Test results should describe checks actually performed on
+the relevant version, rather than assumed outcomes.
+
+A functional review is not the same as a security audit.
