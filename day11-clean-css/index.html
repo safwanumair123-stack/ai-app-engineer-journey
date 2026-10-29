@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 11: Clean CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Day 11: Clean CSS</h1>
+
+  <p>Practice only. Use fictional information.</p>
+
+  <form id="postForm">
+    <label for="title">Post title:</label><br>
+    <input id="title" type="text" required maxlength="100">
+    <br><br>
+
+    <label for="body">Post content:</label><br>
+    <textarea
+      id="body"
+      rows="5"
+      cols="40"
+      required
+      maxlength="1000"
+    ></textarea>
+    <br><br>
+
+    <button id="submitBtn" type="submit">
+      Send practice post
+    </button>
+
+    <button id="clearBtn" type="button">
+  Clear form and result
+</button>
+
+  </form>
+
+  <p id="status" role="status"></p>
+
+  <section id="resultSection" hidden>
+    <h2>Practice post response</h2>
+
+    <h3>Title</h3>
+    <p id="resultTitle"></p>
+
+    <h3>Content</h3>
+    <p id="resultBody"></p>
+
+    <p>Post ID: <span id="resultId"></span></p>
+  </section>
+
+  <h2>Raw API response</h2>
+  <pre id="output"></pre>
+
+  <script src="script.js"></script>
+</body>
+</html>

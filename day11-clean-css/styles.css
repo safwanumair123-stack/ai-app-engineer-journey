@@ -1,0 +1,52 @@
+/* Day 11 — Base styles */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #1f2937;
+}
+
+form {
+  margin-bottom: 24px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 14px;
+  margin-right: 8px;
+  border: 1px solid #1f2937;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+#resultBody {
+  white-space: pre-wrap;
+}
+
+#output {
+  background-color: #f3f4f6;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
