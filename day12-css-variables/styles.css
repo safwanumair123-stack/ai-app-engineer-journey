@@ -1,0 +1,74 @@
+:root {
+  --main-text-color: #1f2937;
+  --border-color: #9ca3af;
+  --page-background: #ffffff;
+  --code-background: #f3f4f6;
+  --main-spacing: 20px;
+  --small-spacing: 8px;
+  --main-font: Arial, sans-serif;
+}
+
+/* Day 12 — CSS variables */
+
+:root {
+  --main-text-color: #1f2937;
+  --border-color: #9ca3af;
+  --page-background: #ffffff;
+  --code-background: #f3f4f6;
+  --main-spacing: 20px;
+  --small-spacing: 8px;
+  --main-font: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--main-font);
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--main-spacing);
+  background-color: var(--page-background);
+  color: var(--main-text-color);
+}
+
+h1 {
+  color: var(--main-text-color);
+}
+
+form {
+  margin-bottom: 24px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--small-spacing);
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+button {
+  padding: var(--small-spacing) 14px;
+  margin-right: var(--small-spacing);
+  border: 1px solid var(--main-text-color);
+  border-radius: 4px;
+  background-color: var(--page-background);
+  cursor: pointer;
+}
+
+#resultBody {
+  white-space: pre-wrap;
+}
+
+#output {
+  background-color: var(--code-background);
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
