@@ -1,0 +1,121 @@
+/* ===================================
+   Day 15 — CSS review
+   Sections:
+   1. Design tokens
+   2. Base styles
+   3. Form styles
+   4. Button styles
+   5. Error styles
+   6. Result styles
+   =================================== */
+
+/* 1. Design tokens */
+
+:root {
+  --main-text-color: #1f2937;
+  --border-color: #9ca3af;
+  --page-background: #ffffff;
+  --code-background: #f3f4f6;
+  --main-spacing: 20px;
+  --small-spacing: 8px;
+  --main-font: Arial, sans-serif;
+  --primary-button-background: #1f2937;
+  --primary-button-text: #ffffff;
+  --secondary-button-background: #ffffff;
+  --secondary-button-text: #1f2937;
+  --error-color: #b91c1c;
+  --error-background: #fef2f2;
+}
+
+/* 2. Base styles */
+
+body {
+  font-family: var(--main-font);
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--main-spacing);
+  background-color: var(--page-background);
+  color: var(--main-text-color);
+}
+
+h1 {
+  color: var(--main-text-color);
+}
+
+/* 3. Form styles */
+
+form {
+  margin-bottom: 24px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--small-spacing);
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* 4. Button styles */
+
+#submitBtn {
+  padding: var(--small-spacing) 14px;
+  border: 1px solid var(--primary-button-background);
+  border-radius: 4px;
+  background-color: var(--primary-button-background);
+  color: var(--primary-button-text);
+  cursor: pointer;
+}
+
+#clearBtn {
+  padding: var(--small-spacing) 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--secondary-button-background);
+  color: var(--secondary-button-text);
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background-color: #374151;
+}
+
+#clearBtn:hover {
+  background-color: #f3f4f6;
+}
+
+/* 5. Error styles */
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error-color);
+  background-color: var(--error-background);
+}
+
+/* 6. Result styles */
+
+#resultBody {
+  white-space: pre-wrap;
+}
+
+#output {
+  background-color: var(--code-background);
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
