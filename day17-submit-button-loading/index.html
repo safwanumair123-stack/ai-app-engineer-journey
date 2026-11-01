@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 17 — Submit Button Loading State</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Day 17 — Submit Button Loading State</h1>
+
+    <p>
+      This practice app sends a post request to a practice API.
+      While the request is running, the submit button changes to
+      a loading state and cannot be clicked again.
+    </p>
+
+    <form id="postForm" novalidate>
+      <div class="field">
+        <label for="title">Post title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter a title"
+          autocomplete="off"
+        >
+        <p class="error" id="titleError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="body">Post content</label>
+        <textarea
+          id="body"
+          name="body"
+          rows="5"
+          placeholder="Write your post content"
+        ></textarea>
+        <p class="error" id="bodyError" aria-live="polite"></p>
+      </div>
+
+      <div class="actions">
+        <button
+          type="submit"
+          id="submitBtn"
+          class="primary-btn"
+        >
+          Send practice post
+        </button>
+
+        <button
+          type="button"
+          id="clearBtn"
+          class="secondary-btn"
+        >
+          Clear form and result
+        </button>
+      </div>
+    </form>
+
+    <p
+      class="status"
+      id="status"
+      role="status"
+      aria-live="polite"
+    ></p>
+
+    <section class="result" id="resultSection" hidden>
+      <h2>Submitted post</h2>
+
+      <p class="result-label">Title:</p>
+      <p class="result-value" id="resultTitle"></p>
+
+      <p class="result-label">Content:</p>
+      <p class="result-value" id="resultBody"></p>
+
+      <p class="result-label">Practice post ID:</p>
+      <p class="result-value" id="resultId"></p>
+    </section>
+
+    <section class="raw-output">
+      <h2>Raw API response</h2>
+      <pre id="output"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
