@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 21 — Success Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Day 21 — Success Confirmation</h1>
+
+    <p>
+      This practice app sends a post request to a practice API.
+      After a successful submission, users see a clear confirmation
+      and can start another post.
+    </p>
+
+    <form id="postForm" novalidate>
+      <div class="field">
+        <label for="title">Post title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter a title"
+          autocomplete="off"
+        >
+        <p class="error" id="titleError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="body">Post content</label>
+        <textarea
+          id="body"
+          name="body"
+          rows="5"
+          maxlength="200"
+          placeholder="Write your post content"
+        ></textarea>
+
+        <p
+          class="character-counter"
+          id="characterCounter"
+          aria-live="polite"
+        >
+          0 / 200 characters
+        </p>
+
+        <p class="error" id="bodyError" aria-live="polite"></p>
+      </div>
+
+      <div class="actions">
+        <button
+          type="submit"
+          id="submitBtn"
+          class="primary-btn"
+        >
+          Send practice post
+        </button>
+
+        <button
+          type="button"
+          id="clearBtn"
+          class="secondary-btn"
+        >
+          Clear form and result
+        </button>
+      </div>
+    </form>
+
+    <div class="status-row">
+      <span
+        class="spinner"
+        id="spinner"
+        hidden
+        aria-hidden="true"
+      ></span>
+
+      <p
+        class="status"
+        id="status"
+        role="status"
+        aria-live="polite"
+      ></p>
+    </div>
+
+    <section
+      class="success-confirmation"
+      id="successConfirmation"
+      hidden
+      role="status"
+      aria-live="polite"
+    >
+      <h2>Post submitted successfully</h2>
+
+      <p>
+        Your practice post was sent successfully.
+      </p>
+
+      <button
+        type="button"
+        id="startAgainBtn"
+        class="secondary-btn"
+      >
+        Start another post
+      </button>
+    </section>
+
+    <section class="result" id="resultSection" hidden>
+      <h2>Submitted post</h2>
+
+      <p class="result-label">Title:</p>
+      <p class="result-value" id="resultTitle"></p>
+
+      <p class="result-label">Content:</p>
+      <p class="result-value" id="resultBody"></p>
+
+      <p class="result-label">Practice post ID:</p>
+      <p class="result-value" id="resultId"></p>
+    </section>
+
+    <section class="raw-output">
+      <h2>Raw API response</h2>
+      <pre id="output"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
