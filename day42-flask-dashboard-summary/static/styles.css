@@ -1,0 +1,216 @@
+/* Day 42 — Styling for the Enquiry Tracker */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222831;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1f3b57;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #1f3b57;
+}
+
+h3 {
+    color: #1f3b57;
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem;
+    margin-top: 0.35rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #1f3b57;
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background-color: #2c517a;
+}
+
+button[type="reset"] {
+    background-color: #e0e0e0;
+    color: #222831;
+    margin-left: 0.5rem;
+}
+
+button[type="reset"]:hover {
+    background-color: #cfcfcf;
+}
+
+a {
+    color: #1f3b57;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.clear-filters-link {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 0.75rem;
+}
+
+.message {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.message.success {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+    border: 1px solid #1e7e34;
+}
+
+.message.error {
+    background-color: #fdecea;
+    color: #b71c1c;
+    border: 1px solid #b71c1c;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-card {
+    background-color: #f4f6f8;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.dashboard-number {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f3b57;
+}
+
+.dashboard-label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+.summary-list {
+    margin-top: 0;
+    padding-left: 1.25rem;
+}
+
+.enquiry-card {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.enquiry-card p {
+    margin: 0.25rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    button[type="reset"] {
+        margin-left: 0;
+    }
+
+    .clear-filters-link {
+        margin-left: 0;
+    }
+}
