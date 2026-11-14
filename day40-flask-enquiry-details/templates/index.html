@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Enquiry Tracker</h1>
+        <p>
+            Capture customer enquiries, assign priorities,
+            and track progress in one place.
+        </p>
+    </header>
+
+    <main>
+        {% if message %}
+            <div class="message {{ message_type }}">
+                {% if message_type == "error" %}
+                    <ul>
+                        {% for error in message %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>{{ message }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <section>
+            <h2>Create a new enquiry</h2>
+
+            <form method="POST" action="/create-enquiry">
+                <label for="customer-name">
+                    Customer name
+                </label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customer-name"
+                    placeholder="Enter the customer name"
+                >
+
+                <label for="enquiry-type">
+                    Enquiry type
+                </label>
+                <select id="enquiry-type" name="enquiry-type">
+                    <option value="">Select an enquiry type</option>
+                    {% for enquiry_type in approved_enquiry_types %}
+                        <option value="{{ enquiry_type }}">
+                            {{ enquiry_type }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <label for="priority">
+                    Priority
+                </label>
+                <select id="priority" name="priority">
+                    <option value="">Select a priority</option>
+                    {% for priority in approved_priorities %}
+                        <option value="{{ priority }}">
+                            {{ priority }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <label for="enquiry-details">
+                    Enquiry details
+                </label>
+                <textarea
+                    id="enquiry-details"
+                    name="enquiry-details"
+                    rows="4"
+                    placeholder="Enter the enquiry details"
+                ></textarea>
+
+                <label for="next-action">
+                    Next action
+                </label>
+                <input
+                    type="text"
+                    id="next-action"
+                    name="next-action"
+                    placeholder="Enter the next action"
+                >
+
+                <button type="submit">
+                    Create enquiry
+                </button>
+
+                <button type="reset">
+                    Clear form
+                </button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Enquiry list</h2>
+
+            {% if enquiries|length == 0 %}
+                <p>
+                    No enquiries have been created yet.
+                </p>
+            {% else %}
+                <p>
+                    {{ enquiries|length }} enquiry record(s) saved.
+                </p>
+
+                {% for enquiry in enquiries %}
+                    <div class="enquiry-card">
+                        <p>
+    <a href="/enquiry/{{ enquiry.reference_number }}">
+        View and update enquiry
+    </a>
+</p>
+                        <p>
+                            <strong>
+                                Reference number:
+                            </strong>
+                            {{ enquiry.reference_number }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Customer:
+                            </strong>
+                            {{ enquiry.customer_name }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Enquiry type:
+                            </strong>
+                            {{ enquiry.enquiry_type }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Priority:
+                            </strong>
+                            {{ enquiry.priority }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Status:
+                            </strong>
+                            {{ enquiry.status }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Created at:
+                            </strong>
+                            {{ enquiry.created_at }}
+                        </p>
+
+                        {% if enquiry.enquiry_details %}
+                            <p>
+                                <strong>
+                                    Details:
+                                </strong>
+                                {{ enquiry.enquiry_details }}
+                            </p>
+                        {% endif %}
+
+                        {% if enquiry.next_action %}
+                            <p>
+                                <strong>
+                                    Next action:
+                                </strong>
+                                {{ enquiry.next_action }}
+                            </p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Enquiry Tracker — Day 39 practice project
+        </p>
+    </footer>
+</body>
+</html>
