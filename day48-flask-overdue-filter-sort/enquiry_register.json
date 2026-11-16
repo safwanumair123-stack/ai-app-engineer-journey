@@ -1,0 +1,38 @@
+[
+  {
+    "reference_number": "ENQ-3614",
+    "customer_name": "Ahmed traders",
+    "enquiry_type": "Quotation",
+    "priority": "High",
+    "status": "New",
+    "created_at": "2026-11-16 13:20:16",
+    "follow_up_date": "2026-11-26",
+    "enquiry_details": "Need a quotation for a website",
+    "next_action": "Send quotation by Friday",
+    "notes": []
+  },
+  {
+    "reference_number": "ENQ-8995",
+    "customer_name": "Sara services",
+    "enquiry_type": "Support",
+    "priority": "Medium",
+    "status": "New",
+    "created_at": "2026-11-16 13:24:56",
+    "follow_up_date": "",
+    "enquiry_details": "Need help with email setup",
+    "next_action": "Contact customer for details",
+    "notes": []
+  },
+  {
+    "reference_number": "ENQ-9556",
+    "customer_name": "Bilal enterprises",
+    "enquiry_type": "Partnership",
+    "priority": "Low",
+    "status": "New",
+    "created_at": "2026-11-16 13:22:48",
+    "follow_up_date": "2026-11-18",
+    "enquiry_details": "Interested in a business partnership",
+    "next_action": "Arrange an introductory call",
+    "notes": []
+  }
+]
