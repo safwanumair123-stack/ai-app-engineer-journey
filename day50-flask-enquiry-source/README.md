@@ -1,0 +1,90 @@
+# Day 50 — Add Enquiry Source and Source Filtering
+
+This project adds enquiry source tracking and source filtering to the Enquiry Tracker web application.
+
+## Features
+
+- Creates new enquiry records.
+- Assigns a unique reference number to each enquiry.
+- Captures the current date and time.
+- Saves enquiries to a JSON file.
+- Assigns a priority level to each enquiry.
+- Assigns an enquiry to a team member.
+- Records the enquiry source.
+- Edits the enquiry source.
+- Filters enquiries by enquiry source.
+- Displays enquiry counts by source in the dashboard.
+- Adds a follow-up date to each enquiry.
+- Validates the follow-up date.
+- Edits the follow-up date.
+- Identifies overdue follow-ups.
+- Displays the overdue follow-up count in the dashboard.
+- Filters enquiries to show only overdue follow-ups.
+- Sorts enquiries by follow-up date, earliest first.
+- Updates enquiry status.
+- Updates enquiry priority.
+- Updates the next action.
+- Edits the customer name.
+- Edits the enquiry type.
+- Edits the priority.
+- Edits the enquiry details.
+- Edits the next action.
+- Adds timestamped notes to an enquiry.
+- Displays notes in reverse chronological order.
+- Searches enquiries by customer name.
+- Searches enquiries by enquiry type.
+- Filters enquiries by status.
+- Filters enquiries by priority.
+- Displays a dashboard summary.
+- Deletes an enquiry after confirmation.
+- Preserves all other enquiries after deletion.
+- Exports all enquiries to a downloadable CSV file.
+- Includes the assigned team member and enquiry source in the CSV export.
+- Uses a .gitignore rule to keep changing local JSON test data out of GitHub.
+
+## How to run
+
+Open a terminal inside the day50-flask-enquiry-source folder and run:
+
+py app.py
+
+Then open:
+
+http://127.0.0.1:5001/
+
+## Main routes
+
+- / — Enquiry list, dashboard, and create-enquiry form
+- /create-enquiry — Creates a new enquiry
+- /enquiry/<reference_number> — Displays one enquiry
+- /edit-enquiry/<reference_number> — Edits one enquiry
+- /add-note/<reference_number> — Adds a timestamped note
+- /delete-enquiry/<reference_number> — Deletes one enquiry
+- /export-enquiries — Downloads all enquiries as CSV
+
+## Approved enquiry types
+
+- General enquiry
+- Quotation
+- Support
+- Partnership
+
+## Approved priorities
+
+- Low
+- Medium
+- High
+
+## Approved statuses
+
+- New
+- In progress
+- Closed
+
+## Approved enquiry sources
+
+- Website
+- WhatsApp
+- Email
+- Referral
+- Phone call
