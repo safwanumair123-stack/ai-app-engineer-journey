@@ -1,0 +1,163 @@
+# Day 66 — Move Enquiry Tracker to SQLite Database
+
+This project moves the Enquiry Tracker web application from local JSON storage to a SQLite database.
+
+## Purpose
+
+The Enquiry Tracker helps a small or micro-business organise customer enquiries, assign responsibility, track follow-ups, prioritise opportunities, and export records for reporting.
+
+## Database
+
+The application uses SQLite and creates a local database file called:
+
+enquiry_register.db
+
+The database contains an enquiries table with the following fields:
+
+- id
+- reference_number
+- customer_name
+- customer_email
+- customer_phone
+- enquiry_type
+- priority
+- status
+- assigned_to
+- enquiry_source
+- estimated_value
+- created_at
+- follow_up_date
+- enquiry_details
+- next_action
+- notes
+
+## Features
+
+- Creates new enquiry records.
+- Assigns a unique reference number to each enquiry.
+- Captures the current date and time.
+- Saves enquiries to a SQLite database.
+- Requires a valid customer email address.
+- Requires a valid customer phone number.
+- Prevents duplicate customer email addresses.
+- Prevents duplicate customer phone numbers.
+- Requires a non-negative estimated value.
+- Validates the estimated value.
+- Edits the estimated value.
+- Calculates the total estimated value in the dashboard.
+- Calculates the average estimated value in the dashboard.
+- Identifies the enquiry with the highest estimated value.
+- Displays the highest-value enquiry in the dashboard.
+- Identifies the top three highest-value enquiries.
+- Displays the top three highest-value enquiries in ranked order.
+- Calculates estimated value by enquiry status.
+- Calculates estimated value by assigned person.
+- Calculates estimated value by enquiry source.
+- Calculates estimated value by priority.
+- Calculates estimated value by enquiry type.
+- Groups unassigned enquiry value under Unassigned.
+- Adds a follow-up date to each enquiry.
+- Validates the follow-up date.
+- Edits the follow-up date.
+- Identifies overdue follow-ups.
+- Displays the overdue follow-up count in the dashboard.
+- Filters enquiries to show only overdue follow-ups.
+- Sorts enquiries by follow-up date, earliest first.
+- Updates enquiry status.
+- Closes an enquiry with one click after confirmation.
+- Reopens a closed enquiry with one click after confirmation.
+- Updates enquiry priority.
+- Updates the next action.
+- Edits the customer name.
+- Edits the enquiry type.
+- Edits the priority.
+- Edits the enquiry details.
+- Edits the next action.
+- Adds timestamped notes to an enquiry.
+- Displays notes in reverse chronological order.
+- Searches enquiries by customer name.
+- Searches enquiries by enquiry type.
+- Filters enquiries by status.
+- Filters enquiries by priority.
+- Displays a dashboard summary.
+- Deletes an enquiry after confirmation.
+- Preserves all other enquiries after deletion.
+- Exports all enquiries to a downloadable CSV file.
+- Includes the estimated value in the CSV export.
+- Uses a .gitignore rule to keep changing local database test data out of GitHub.
+
+## How to run
+
+Open a terminal inside the day66-flask-sqlite-database folder and run:
+
+py app.py
+
+Then open:
+
+http://127.0.0.1:5001/
+
+## Main routes
+
+- / — Enquiry list, dashboard, and create-enquiry form
+- /create-enquiry — Creates a new enquiry
+- /enquiry/<reference_number> — Displays one enquiry
+- /edit-enquiry/<reference_number> — Edits one enquiry
+- /close-enquiry/<reference_number> — Closes one enquiry
+- /reopen-enquiry/<reference_number> — Reopens one enquiry
+- /add-note/<reference_number> — Adds a timestamped note
+- /delete-enquiry/<reference_number> — Deletes one enquiry
+- /export-enquiries — Downloads all enquiries as CSV
+
+## Dashboard metrics
+
+- Total enquiries
+- Overdue follow-ups
+- Enquiries by status
+- Enquiries by priority
+- Enquiries by type
+- Enquiries by source
+- Total estimated value
+- Average estimated value
+- Highest estimated value
+- Highest-value enquiry
+- Top three highest-value enquiries
+- Estimated value by status
+- Estimated value by priority
+- Estimated value by enquiry type
+- Estimated value by assigned person
+- Estimated value by source
+
+## Approved enquiry types
+
+- General enquiry
+- Quotation
+- Support
+- Partnership
+
+## Approved priorities
+
+- Low
+- Medium
+- High
+
+## Approved statuses
+
+- New
+- In progress
+- Closed
+
+## Approved enquiry sources
+
+- Website
+- WhatsApp
+- Email
+- Referral
+- Phone call
+
+## Current limitations
+
+This application uses a local SQLite database and does not yet include user accounts, roles, automated tests, deployment, or AI features.
+
+## Next phase
+
+The next phase is to add user accounts, basic roles, automated tests, improved error handling, deployment, and focused AI features with human approval.
