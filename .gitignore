@@ -41,3 +41,5 @@ day68-flask-roles-permissions/enquiry_register.db
 day69-flask-automated-tests/enquiry_register.db
 .pytest_cache/
 day70-flask-error-handling/enquiry_register.db
+day71-flask-deployment-preparation/enquiry_register.db
+day71-flask-deployment-preparation/.pytest_cache/
