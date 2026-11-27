@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p>
+            Welcome, {{ session['user_name'] }}.
+        </p>
+
+        <p>
+            Role:
+            {{ session['user_role'] }}
+        </p>
+
+        <p>
+            <a href="/">
+                Back to enquiry list
+            </a>
+        </p>
+
+        <p>
+            <a href="/logout">
+                Log out
+            </a>
+        </p>
+    </header>
+
+    <main>
+        {% if message %}
+            <div class="message {{ message_type }}">
+                <p>{{ message }}</p>
+            </div>
+        {% endif %}
+
+        <section>
+            <h2>
+                All users
+            </h2>
+
+            {% if users %}
+                {% for user in users %}
+                    <div class="enquiry-card">
+                        <p>
+                            <strong>
+                                User ID:
+                            </strong>
+                            {{ user.id }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Full name:
+                            </strong>
+                            {{ user.full_name }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Email:
+                            </strong>
+                            {{ user.email }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Role:
+                            </strong>
+                            {{ user.role }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Created at:
+                            </strong>
+                            {{ user.created_at }}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>
+                    No users have been created yet.
+                </p>
+            {% endif %}
+        </section>
+
+        <section>
+            <h2>
+                All enquiries
+            </h2>
+
+            <p>
+                Showing {{ enquiries|length }} enquiries across all users.
+            </p>
+
+            {% if enquiries %}
+                {% for enquiry in enquiries %}
+                    <div class="enquiry-card">
+                        <p>
+                            <strong>
+                                Reference number:
+                            </strong>
+                            {{ enquiry.reference_number }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Owner:
+                            </strong>
+                            {{ enquiry.owner_name }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Customer:
+                            </strong>
+                            {{ enquiry.customer_name }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Customer email:
+                            </strong>
+                            {{ enquiry.customer_email }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Enquiry type:
+                            </strong>
+                            {{ enquiry.enquiry_type }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Priority:
+                            </strong>
+                            {{ enquiry.priority }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Status:
+                            </strong>
+                            {{ enquiry.status }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Estimated value:
+                            </strong>
+                            {{ enquiry.estimated_value }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Created at:
+                            </strong>
+                            {{ enquiry.created_at }}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>
+                    No enquiries have been created yet.
+                </p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Enquiry Tracker — Day 68 practice project
+        </p>
+    </footer>
+</body>
+</html>
