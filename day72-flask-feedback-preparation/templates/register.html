@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Create Account</h1>
+        <p>
+            Create an account to use the Enquiry Tracker.
+        </p>
+    </header>
+
+    <main>
+        {% if errors %}
+            <div class="message error">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <section>
+            <form method="POST" action="/register">
+                <label for="full-name">
+                    Full name
+                </label>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full-name"
+                    value="{{ full_name }}"
+                >
+
+                <label for="email">
+                    Email address
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ email }}"
+                >
+
+                <label for="password">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                >
+
+                <label for="confirm-password">
+                    Confirm password
+                </label>
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                >
+
+                <button type="submit">
+                    Create account
+                </button>
+            </form>
+
+            <p>
+                Already have an account?
+                <a href="/login">
+                    Log in
+                </a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Enquiry Tracker — Day 67 practice project
+        </p>
+    </footer>
+</body>
+</html>
